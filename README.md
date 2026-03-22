@@ -2,7 +2,7 @@
 
 A fully interactive **macOS-style portfolio** built with pure HTML, CSS, and JavaScript. No frameworks, no dependencies — just clean code that looks and feels like a real operating system.
 
-🌐 **Live:** [BitByGopal.github.io/portfolio](https://BitByGopal.github.io/portfolio)
+🌐 **Live:** [BitByGopal.github.io/portfolio](https://bitbygopal.github.io/Golla-Portfolio/)
 
 ---
 
