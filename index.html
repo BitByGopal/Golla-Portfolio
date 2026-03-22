@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golla Gopal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Pinyon+Script&family=Great+Vibes&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       BOOT SCREEN
+  ═══════════════════════════════════════════ -->
+  <div id="boot-screen">
+    <div class="boot-terminal">
+      <div class="bt-lines" id="btLines"></div>
+      <div class="bt-cursor" id="btCursor">▋</div>
+    </div>
+    <div class="boot-bar-wrap">
+      <div class="boot-bar"><div class="boot-bar-fill" id="bootFill"></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       LOCK SCREEN
+  ═══════════════════════════════════════════ -->
+  <div id="lock-screen" class="hidden">
+    <div class="lock-bg"></div>
+
+    <div class="lock-split">
+
+      <!-- LEFT — Time + Unlock -->
+      <div class="lock-right" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 40px 32px 40px 48px;">
+        <div class="lock-time-group">
+          <div class="lock-time" id="lockTime">00:00</div>
+          <div class="lock-date" id="lockDate">Friday, March 20</div>
+        </div>
+        <div class="lock-unlock-row" style="margin-top: 32px;">
+          <div class="lock-unlock-btn" id="lockArrow">
+            <span class="lub-text">Click to unlock</span>
+            <span class="lub-arrow">→</span>
+          </div>
+          <div class="lock-hint">or press Enter</div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Horizontal Carousel Cards -->
+      <div class="lock-left" style="border-right: none; padding: 40px 48px 32px 32px;">
+        <div class="ls-carousel-wrap">
+          <div class="ls-carousel" id="lsCarousel">
+
+            <!-- Card 1: Short Intro -->
+            <div class="ls-slide">
+              <div class="ls-slide-inner">
+                <div class="ls-slide-tag">👋 Hello There</div>
+                <div class="ls-slide-heading">Full Stack<br/>Developer</div>
+                <div class="ls-slide-text">I build <strong>web apps</strong> and train <strong>ML models</strong> that solve real problems. Django · Python · JavaScript · Bootstrap — from idea to deployment.</div>
+                <div class="ls-slide-pill">AI & ML · LPU Punjab 🎓</div>
+              </div>
+            </div>
+
+            <!-- Card 2: Origin -->
+            <div class="ls-slide">
+              <div class="ls-slide-inner">
+                <div class="ls-slide-tag">Origin Story 📍</div>
+                <div class="ls-slide-heading">From the Land of<br/>Tungabhadra</div>
+                <div class="ls-slide-text">Born in <strong>Kurnool, AP</strong> — a city of rivers & ancient forts. Cracked JEE prep in Hyderabad, then packed everything and moved <strong>2000km north to Punjab</strong>. Not just chasing a degree — chasing a craft.</div>
+                <div class="ls-slide-pill">#KurnoolToCode 🚀</div>
+              </div>
+            </div>
+
+            <!-- Card 3: Hobbies -->
+            <div class="ls-slide">
+              <div class="ls-slide-inner">
+                <div class="ls-slide-tag">Beyond the Screen 🎯</div>
+                <div class="ls-slide-heading">What Keeps<br/>Me Going</div>
+                <div class="ls-hobbies-list">
+                  <div class="ls-hob">🏔️ <span>Chasing hill stations — Manali, Kasol & beyond</span></div>
+                  <div class="ls-hob">🎵 <span>Lo-fi music on loop while deep in code</span></div>
+                  <div class="ls-hob">🧩 <span>DSA problems at midnight — the real game</span></div>
+                  <div class="ls-hob">📖 <span>Tech blogs, dev talks, always learning</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Projects Story -->
+            <div class="ls-slide">
+              <div class="ls-slide-inner">
+                <div class="ls-slide-tag">The Build Log 🛠️</div>
+                <div class="ls-slide-heading">Things I've<br/>Shipped</div>
+                <div class="ls-story-list">
+                  <div class="ls-story-item"><span class="ls-si-dot"></span><span><strong>YumYum</strong> — food delivery platform, Django + full auth</span></div>
+                  <div class="ls-story-item"><span class="ls-si-dot"></span><span><strong>Smart Home ML</strong> — energy optimizer, Python + Streamlit</span></div>
+                  <div class="ls-story-item"><span class="ls-si-dot"></span><span><strong>1Stop.AI</strong> — Frontend Intern, built real UI for real users</span></div>
+                  <div class="ls-story-item"><span class="ls-si-dot"></span><span><strong>+3 more</strong> — SmartShop, Math Fun 4 Kids, Expense Tracker</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Stats -->
+            <div class="ls-slide">
+              <div class="ls-slide-inner">
+                <div class="ls-slide-tag">By The Numbers 📊</div>
+                <div class="ls-slide-heading">The Stats<br/>So Far</div>
+                <div class="ls-stats-grid">
+                  <div class="ls-stat"><span class="ls-stat-n">200+</span><span class="ls-stat-l">LeetCode</span></div>
+                  <div class="ls-stat"><span class="ls-stat-n">200+</span><span class="ls-stat-l">GFG DSA</span></div>
+                  <div class="ls-stat"><span class="ls-stat-n">5+</span><span class="ls-stat-l">Projects</span></div>
+                  <div class="ls-stat"><span class="ls-stat-n">12+</span><span class="ls-stat-l">Certs</span></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Dots indicator -->
+          <div class="ls-dots" id="lsDots">
+            <span class="ls-dot active"></span>
+            <span class="ls-dot"></span>
+            <span class="ls-dot"></span>
+            <span class="ls-dot"></span>
+            <span class="ls-dot"></span>
+          </div>
+        </div>
+        <div class="lock-quote" id="lockQuote"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       DESKTOP
+  ═══════════════════════════════════════════ -->
+  <div id="desktop" class="hidden">
+
+    <!-- MENUBAR -->
+    <div id="menubar">
+      <div class="mb-left">
+        <span class="mb-apple">&#63743;</span>
+        <span class="mb-item active">gopal.portfolio</span>
+        <span class="mb-item">File</span>
+        <span class="mb-item">View</span>
+        <span class="mb-item">Window</span>
+        <span class="mb-item">Help</span>
+      </div>
+      <div class="mb-right">
+        <button class="mb-book-call" id="mbBookCall">📅 Book a Call</button>
+        <span class="mb-sep">|</span>
+        <span class="mb-weather" id="mbWeather" title="Phagwara, Punjab">☁️ 17°C</span>
+        <button class="mb-theme-toggle" id="themeToggle" title="Toggle Day/Night">🌙</button>
+        <span class="mb-icon">🔋</span>
+        <span class="mb-clock" id="mbClock">12:00</span>
+      </div>
+    </div>
+
+    <!-- CALENDAR WIDGET -->
+    <div id="desktop-calendar">
+      <div class="cal-header">
+        <span class="cal-month" id="calMonth">March 2026</span>
+        <div class="cal-nav">
+          <button class="cal-nav-btn" id="calPrev">‹</button>
+          <button class="cal-nav-btn" id="calNext">›</button>
+        </div>
+      </div>
+      <div class="cal-days-header">
+        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+
+    <!-- NOTIFICATION CONTAINER -->
+    <div id="notif-container"></div>
+
+    <!-- RIGHT CLICK MENU -->
+    <div id="ctx-menu" class="hidden">
+      <div class="ctx-item ctx-header">gopal.portfolio</div>
+      <div class="ctx-divider"></div>
+      <div class="ctx-item" data-action="about">👤 About Gopal</div>
+      <div class="ctx-item" data-action="projects">📁 View Projects</div>
+      <div class="ctx-item" data-action="internship">💼 1Stop.AI Internship</div>
+      <div class="ctx-item" data-action="contact">✉️ Contact</div>
+      <div class="ctx-divider"></div>
+      <div class="ctx-item" data-action="cv">⬇️ Download CV</div>
+      <div class="ctx-item" data-action="github">💻 GitHub ↗</div>
+      <div class="ctx-item" data-action="linkedin">🔗 LinkedIn ↗</div>
+      <div class="ctx-divider"></div>
+      <div class="ctx-item" data-action="wallpaper">🖼️ Change Wallpaper</div>
+    </div>
+
+    <!-- DESKTOP ICONS -->
+    <div id="desktop-icons">
+      <div class="desk-icon" data-window="terminal" title="Open Terminal">
+        <div class="di-icon terminal-icon">
+          <span class="di-prompt">~</span>
+        </div>
+        <span class="di-label">Terminal.app</span>
+      </div>
+      <div class="desk-icon" data-window="finder" title="Open Finder">
+        <div class="di-icon finder-icon">
+          <div class="finder-face">
+            <div class="fi-left"></div>
+            <div class="fi-right"></div>
+          </div>
+        </div>
+        <span class="di-label">Portfolio.app</span>
+      </div>
+      <div class="desk-icon" data-window="classic" title="Classic Portfolio">
+        <div class="di-icon classic-icon">
+          <span class="classic-icon-letter">G</span>
+        </div>
+        <span class="di-label">Classic.app</span>
+      </div>
+      <div class="desk-icon" data-window="games" title="Games">
+        <div class="di-icon games-icon">🎮</div>
+        <span class="di-label">Games.app</span>
+      </div>
+      <div class="desk-icon" data-window="assistant" title="AI Assistant">
+        <div class="di-icon assistant-icon">
+          <span class="assistant-icon-symbol">✦</span>
+        </div>
+        <span class="di-label">Assistant.app</span>
+      </div>
+    </div>
+
+    <!-- DOCK -->
+    <div id="dock">
+      <div class="dock-inner">
+        <div class="dock-item" data-window="terminal" title="Terminal">
+          <div class="di-icon terminal-icon small">
+            <span class="di-prompt">~</span>
+          </div>
+          <div class="dock-dot" id="dot-terminal"></div>
+        </div>
+        <div class="dock-item" data-window="finder" title="Portfolio">
+          <div class="di-icon finder-icon small">
+            <div class="finder-face small">
+              <div class="fi-left"></div>
+              <div class="fi-right"></div>
+            </div>
+          </div>
+          <div class="dock-dot" id="dot-finder"></div>
+        </div>
+        <div class="dock-item" data-window="classic" title="Classic Portfolio">
+          <div class="di-icon classic-icon small">
+            <span class="classic-icon-letter">G</span>
+          </div>
+          <div class="dock-dot" id="dot-classic"></div>
+        </div>
+        <div class="dock-item" data-window="games" title="Games">
+          <div class="di-icon games-icon small">🎮</div>
+          <div class="dock-dot" id="dot-games"></div>
+        </div>
+        <div class="dock-item" data-window="assistant" title="AI Assistant">
+          <div class="di-icon assistant-icon small">
+            <span class="assistant-icon-symbol">✦</span>
+          </div>
+          <div class="dock-dot" id="dot-assistant"></div>
+        </div>
+        <div class="dock-sep"></div>
+        <a class="dock-item" href="https://github.com/BitByGopal" target="_blank" title="GitHub">
+          <div class="di-icon github-icon small">
+            <svg viewBox="0 0 24 24" fill="white" width="26" height="26">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </div>
+          <div class="dock-dot"></div>
+        </a>
+        <a class="dock-item" href="https://linkedin.com/in/golla-gopal" target="_blank" title="LinkedIn">
+          <div class="di-icon linkedin-icon small">
+            <svg viewBox="0 0 24 24" fill="white" width="26" height="26">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </div>
+          <div class="dock-dot"></div>
+        </a>
+        <a class="dock-item" href="https://leetcode.com/u/BitByGopal/" target="_blank" title="LeetCode">
+          <div class="di-icon lc-icon small">
+            <svg viewBox="0 0 24 24" fill="white" width="24" height="24">
+              <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+            </svg>
+          </div>
+          <div class="dock-dot"></div>
+        </a>
+        <a class="dock-item" href="https://www.geeksforgeeks.org/profile/bitbygopal" target="_blank" title="GeeksforGeeks">
+          <div class="di-icon gfg-icon small">
+            <svg viewBox="0 0 24 24" fill="#2f8d46" width="26" height="26">
+              <path d="M21.45 14.315c-.143.28-.334.532-.565.745-.474.43-1.084.67-1.702.658h-.014c-.617-.006-1.213-.24-1.69-.66L12 9.747l-5.477 5.31a2.355 2.355 0 0 1-1.697.657h-.013a2.355 2.355 0 0 1-1.702-.657 2.405 2.405 0 0 1-.565-.745A2.44 2.44 0 0 1 2.27 13.2c.013-.633.272-1.24.714-1.676L11.2 3.4a1.13 1.13 0 0 1 1.6 0l8.216 8.124c.442.436.7 1.043.714 1.676a2.44 2.44 0 0 1-.28 1.115z"/>
+            </svg>
+          </div>
+          <div class="dock-dot"></div>
+        </a>
+        <a class="dock-item" href="https://mail.google.com/mail/?view=cm&to=gollagopalyadav08@gmail.com" target="_blank" title="Gmail">
+          <div class="di-icon gmail-icon small">
+            <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+              <path d="M2 4h20v16H2z" fill="#1F1D20"/>
+              <path d="M2 4l10 9 10-9" stroke="#D7C9B2" stroke-width="1.5" fill="none"/>
+              <path d="M2 4v16h4V9.5L12 14l6-4.5V20h4V4" fill="#2a2a2a"/>
+              <path d="M2 4l10 8.5L22 4" fill="none" stroke="#F5ECDC" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <div class="dock-dot"></div>
+        </a>
+        <a class="dock-item" href="tel:+917075810619" title="Contact">
+          <div class="di-icon contact-icon small">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="26" height="26">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.08 4.93 2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <div class="dock-dot"></div>
+        </a>
+        <a class="dock-item" href="Gopal_CV.pdf" download title="Download CV">
+          <div class="di-icon cv-icon small">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="26" height="26">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <polyline points="9 15 12 18 15 15"/>
+            </svg>
+          </div>
+          <div class="dock-dot"></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         TERMINAL WINDOW
+    ═══════════════════════════════════════════ -->
+    <div class="mac-window" id="win-terminal" data-win="terminal" style="display:none">
+      <div class="win-titlebar" data-drag="terminal">
+        <div class="win-dots">
+          <button class="wd wd-red"   data-action="close"   data-win="terminal"></button>
+          <button class="wd wd-yellow" data-action="minimize" data-win="terminal"></button>
+          <button class="wd wd-green"  data-action="maximize" data-win="terminal"></button>
+        </div>
+        <span class="win-title">gopal — bash — 80×24</span>
+        <div style="width:56px"></div>
+      </div>
+      <div class="win-body terminal-body" id="term-output"></div>
+      <div class="win-inputrow">
+        <span class="term-ps1">gopal<span class="ps1-dim">@</span>portfolio<span class="ps1-dim">:~$</span></span>
+        <input class="term-input" id="term-input" autocomplete="off" spellcheck="false" placeholder="type 'help' to begin..."/>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         PORTFOLIO WINDOW (Finder style)
+    ═══════════════════════════════════════════ -->
+    <div class="mac-window" id="win-finder" data-win="finder" style="display:none">
+      <div class="win-titlebar" data-drag="finder">
+        <div class="win-dots">
+          <button class="wd wd-red"    data-action="close"   data-win="finder"></button>
+          <button class="wd wd-yellow" data-action="minimize" data-win="finder"></button>
+          <button class="wd wd-green"  data-action="maximize" data-win="finder"></button>
+        </div>
+        <span class="win-title">Portfolio — Golla Gopal</span>
+        <div style="width:56px"></div>
+      </div>
+
+      <!-- Finder sidebar + content -->
+      <div class="finder-layout">
+        <div class="finder-sidebar">
+          <div class="fs-group">FAVORITES</div>
+          <div class="fs-item active" data-section="hero">🏠 Home</div>
+          <div class="fs-item" data-section="about">👤 About</div>
+          <div class="fs-item" data-section="skills">⚙️ Skills</div>
+          <div class="fs-item" data-section="projects">📁 Projects</div>
+          <div class="fs-item" data-section="internship">💼 Internship</div>
+          <div class="fs-item" data-section="education">🎓 Education</div>
+          <div class="fs-item" data-section="certs">📜 Certificates</div>
+          <div class="fs-item" data-section="contact">✉️ Contact</div>
+        </div>
+        <div class="finder-content" id="finder-content">
+
+          <!-- HERO -->
+          <div class="fc-section active" id="fc-hero">
+            <div class="fc-hero">
+              <div class="fch-avatar">GG</div>
+              <h1 class="fch-name">Golla Gopal</h1>
+              <p class="fch-role">Full Stack Developer · AI & ML Student</p>
+              <p class="fch-desc">Building scalable web apps & exploring machine learning at LPU.</p>
+              <div class="fch-btns">
+                <button class="fch-btn primary" onclick="showSection('projects')">View Projects</button>
+                <a href="Gopal_CV.pdf" download class="fch-btn outline">Download CV</a>
+                <a href="Gopal_CV.pdf" target="_blank" class="fch-btn ghost">View CV ↗</a>
+              </div>
+              <div class="fch-stats">
+                <div class="fcs"><span class="fcs-n">5+</span><span class="fcs-l">Projects</span></div>
+                <div class="fcs-div"></div>
+                <div class="fcs"><span class="fcs-n">200+</span><span class="fcs-l">LeetCode</span></div>
+                <div class="fcs-div"></div>
+                <div class="fcs"><span class="fcs-n">200+</span><span class="fcs-l">GFG</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ABOUT -->
+          <div class="fc-section" id="fc-about">
+            <div class="fc-inner">
+              <h2 class="fc-title">About Me</h2>
+              <div class="about-profile-row">
+                <img src="images/Profile.jpeg" class="about-profile-photo" alt="Golla Gopal"/>
+                <div class="about-profile-info">
+                  <div class="about-profile-name">Golla Gopal</div>
+                  <div class="about-profile-role">Full Stack Developer · AI & ML</div>
+                  <div class="about-profile-loc">📍 Punjab, India · Originally from Kurnool, AP</div>
+                  <div class="about-otw"><span class="bc-dot"></span> Open to Work</div>
+                </div>
+              </div>
+              <div class="about-card">
+                <p>I'm <strong>Golla Gopal</strong>, a Full Stack Developer and AI & ML enthusiast in my 3rd year (Pre-Final Year) of BTech CSE at Lovely Professional University, Punjab. I build web applications that are fast, clean, and user-focused — from idea to deployment.</p>
+                <p>My journey started with curiosity about how things work on the internet, and it quickly turned into a passion for building them. I've shipped a food delivery platform, an e-commerce website, an ML-powered energy optimizer, an EdTech app for kids, and a personal finance tracker — each one pushing me to write better code and think like a product engineer.</p>
+                <p>On the ML side, I work with Python, Pandas, and Scikit-learn to build data pipelines, train models, and deploy interactive dashboards using Streamlit. I believe AI should solve real problems — not just look impressive on paper.</p>
+                <p>I've previously interned at <strong>1Stop.AI</strong>, where I built responsive, cross-device UI components for a live EdTech platform and earned a Web Development (Frontend) certificate. Outside of work, I grind DSA — 400+ problems solved across LeetCode and GeeksforGeeks — because strong fundamentals are what separate good developers from great ones.</p>
+                <p>I'm actively looking for internships, freelance projects, and collaboration opportunities where I can contribute, grow, and build things that matter.</p>
+              </div>
+              <div class="info-grid">
+                <div class="info-row"><span class="ik">Location</span><span class="iv">Punjab, India</span></div>
+                <div class="info-row"><span class="ik">University</span><span class="iv">LPU — BTech CSE (AI & ML)</span></div>
+                <div class="info-row"><span class="ik">Year</span><span class="iv">3rd Year · Pre-Final Year · CGPA: 7.2</span></div>
+                <div class="info-row"><span class="ik">Experience</span><span class="iv">Frontend Dev Intern · 1Stop.AI ✓</span></div>
+                <div class="info-row"><span class="ik">Email</span><span class="iv">gollagopalyadav08@gmail.com</span></div>
+                <div class="info-row"><span class="ik">GitHub</span><span class="iv"><a href="https://github.com/BitByGopal" target="_blank">BitByGopal ↗</a></span></div>
+                <div class="info-row"><span class="ik">LinkedIn</span><span class="iv"><a href="https://linkedin.com/in/golla-gopal" target="_blank">golla-gopal ↗</a></span></div>
+                <div class="info-row"><span class="ik">LeetCode</span><span class="iv"><a href="https://leetcode.com/u/BitByGopal/" target="_blank">BitByGopal ↗</a></span></div>
+                <div class="info-row"><span class="ik">GFG</span><span class="iv"><a href="https://www.geeksforgeeks.org/profile/bitbygopal" target="_blank">bitbygopal ↗</a></span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SKILLS -->
+          <div class="fc-section" id="fc-skills">
+            <div class="fc-inner">
+              <h2 class="fc-title">Tech Stack</h2>
+              <div class="sk-grid">
+                <div class="sk-group">
+                  <div class="skg-label">Languages</div>
+                  <div class="skg-pills"><span>Python</span><span>Java</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                </div>
+                <div class="sk-group">
+                  <div class="skg-label">Frameworks</div>
+                  <div class="skg-pills"><span>Django</span><span>Flask</span><span>Bootstrap</span><span>jQuery</span><span>NumPy</span><span>Pandas</span></div>
+                </div>
+                <div class="sk-group">
+                  <div class="skg-label">Tools</div>
+                  <div class="skg-pills"><span>Git</span><span>GitHub</span><span>Docker</span><span>VS Code</span><span>Streamlit</span></div>
+                </div>
+                <div class="sk-group">
+                  <div class="skg-label">Core CS</div>
+                  <div class="skg-pills"><span>DSA</span><span>OOP</span><span>DBMS</span><span>OS</span><span>CN</span><span>Statistics</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECTS -->
+          <div class="fc-section" id="fc-projects">
+            <div class="fc-inner">
+              <h2 class="fc-title">Selected Work</h2>
+              <div class="proj-list">
+                <div class="proj-item">
+                  <div class="pi-head">
+                    <span class="pi-name">YumYum</span>
+                    <span class="pi-tag">Web App</span>
+                  </div>
+                  <p class="pi-desc">A full-featured food delivery web platform where users can browse restaurants, explore menus, add items to cart, and place orders online. Built with Django backend handling user authentication, session management, and order processing. The frontend uses HTML, CSS, and JavaScript to deliver a smooth, responsive experience across all device sizes.</p>
+                  <div class="pi-tech"><span>HTML</span><span>CSS</span><span>JS</span><span>Django</span></div>
+                  <a href="https://web-production-58c6.up.railway.app/" target="_blank" class="pi-link pi-live">🌐 Live Demo ↗</a>
+                  <a href="https://github.com/BitByGopal" target="_blank" class="pi-link">GitHub ↗</a>
+                </div>
+                <div class="proj-item">
+                  <div class="pi-head">
+                    <span class="pi-name">SmartShop</span>
+                    <span class="pi-tag">E-Commerce</span>
+                  </div>
+                  <p class="pi-desc">A responsive e-commerce website featuring product listings, a dynamic shopping cart, and a clean UI built for cross-device compatibility. Designed with a focus on user experience — fast navigation, clear product layout, and smooth interactions. Bootstrap ensures consistent rendering on mobile, tablet, and desktop screens.</p>
+                  <div class="pi-tech"><span>HTML</span><span>CSS</span><span>JS</span><span>Bootstrap</span></div>
+                  <a href="https://github.com/BitByGopal" target="_blank" class="pi-link">View on GitHub ↗</a>
+                </div>
+                <div class="proj-item">
+                  <div class="pi-head">
+                    <span class="pi-name">Smart Home ML</span>
+                    <span class="pi-tag">ML / AI</span>
+                  </div>
+                  <p class="pi-desc">A machine learning project focused on optimizing energy and water usage in home appliances like washing machines and refrigerators. The pipeline covers data simulation, EDA, feature engineering, and training regression and decision tree models. A Streamlit dashboard visualizes real-time predictions and smart usage recommendations to help users conserve resources.</p>
+                  <div class="pi-tech"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Streamlit</span></div>
+                  <a href="https://github.com/BitByGopal" target="_blank" class="pi-link">View on GitHub ↗</a>
+                </div>
+                <div class="proj-item">
+                  <div class="pi-head">
+                    <span class="pi-name">Math Fun 4 Kids</span>
+                    <span class="pi-tag">EdTech</span>
+                  </div>
+                  <p class="pi-desc">An interactive web application designed to make learning mathematics enjoyable for children in early grades. Features modules for addition, subtraction, multiplication, and number sorting with dynamically generated questions using DSA concepts. The app provides instant feedback on answers and is fully responsive, making it accessible on both desktop and mobile devices.</p>
+                  <div class="pi-tech"><span>HTML</span><span>CSS</span><span>JS</span><span>DSA</span></div>
+                  <a href="https://github.com/BitByGopal" target="_blank" class="pi-link">View on GitHub ↗</a>
+                </div>
+                <div class="proj-item">
+                  <div class="pi-head">
+                    <span class="pi-name">Expense Tracker</span>
+                    <span class="pi-tag">Finance</span>
+                  </div>
+                  <p class="pi-desc">A personal finance management web app that helps users log, track, and analyze their daily expenses. Built with jQuery and Bootstrap 5 for a responsive and dynamic UI. Features include adding expense entries with categories, filtering by date or type, deleting records, and viewing dynamic summaries. All data persists across sessions using LocalStorage — no backend required.</p>
+                  <div class="pi-tech"><span>JS</span><span>jQuery</span><span>Bootstrap 5</span><span>LocalStorage</span></div>
+                  <a href="https://github.com/BitByGopal" target="_blank" class="pi-link">View on GitHub ↗</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <!-- INTERNSHIP -->
+          <div class="fc-section" id="fc-internship">
+            <div class="fc-inner">
+              <h2 class="fc-title">Work Experience</h2>
+              <div class="intern-card">
+                <div class="intern-header">
+                  <div class="intern-logo">1S</div>
+                  <div class="intern-meta">
+                    <div class="intern-company">1Stop.AI</div>
+                    <div class="intern-role">Frontend Developer Intern</div>
+                    <div class="intern-period">July 2025 · EdTech & Training Solutions</div>
+                  </div>
+                  <span class="intern-badge">Completed ✓</span>
+                </div>
+                <div class="intern-desc">
+                  <p>Worked as a Frontend Developer Intern at 1Stop.AI, an EdTech company focused on training and skill development solutions. Contributed to building and refining responsive web interfaces used by students and learners across India.</p>
+                  <p>Designed and developed cross-device compatible UI components ensuring consistent experience across mobile, tablet, and desktop. Implemented dynamic features using jQuery and LocalStorage, debugged UI issues, and optimized layouts for better usability and performance.</p>
+                </div>
+                <div class="intern-highlights">
+                  <div class="ih-item"><span class="ih-icon">→</span> Developed responsive UI components using HTML, CSS, JavaScript, jQuery & Bootstrap 5</div>
+                  <div class="ih-item"><span class="ih-icon">→</span> Designed cross-device compatible pages for mobile, tablet and desktop</div>
+                  <div class="ih-item"><span class="ih-icon">→</span> Debugged UI issues and optimized layouts to enhance UX</div>
+                  <div class="ih-item"><span class="ih-icon">→</span> Implemented client-side storage and dynamic features using LocalStorage</div>
+                </div>
+                <div class="intern-footer">
+                  <div class="intern-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>jQuery</span><span>Bootstrap 5</span><span>LocalStorage</span></div>
+                  <a href="https://linkedin.com/in/golla-gopal" target="_blank" class="intern-link">View on LinkedIn ↗</a>
+                </div>
+                <div class="intern-cert">
+                  🏆 Certificate: Web Development (Frontend) · 1Stop.AI · July 2025
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EDUCATION -->
+          <div class="fc-section" id="fc-education">
+            <div class="fc-inner">
+              <h2 class="fc-title">Education</h2>
+              <div class="edu-list">
+
+                <div class="edu-item">
+                  <div class="edu-year">2023 – Present</div>
+                  <div class="edu-body">
+                    <div class="edu-school">Lovely Professional University</div>
+                    <div class="edu-deg">BTech CSE — AI & ML · Punjab</div>
+                    <div class="edu-grade">CGPA: 7.2</div>
+                    <div class="edu-cert-note">📄 Certificate — In Progress</div>
+                  </div>
+                </div>
+
+                <div class="edu-item">
+                  <div class="edu-year">2022 – 2023</div>
+                  <div class="edu-body">
+                    <div class="edu-school">Narayana Junior College</div>
+                    <div class="edu-deg">Higher Secondary · Hyderabad · MPC</div>
+                    <div class="edu-grade">92.9% · A Grade</div>
+                    <button class="edu-cert-btn" onclick="window.open('Certificates/12TH_CERTIFICATE.jpg','_blank')">📄 View Certificate ↗</button>
+                  </div>
+                </div>
+
+                <div class="edu-item">
+                  <div class="edu-year">2020 – 2021</div>
+                  <div class="edu-body">
+                    <div class="edu-school">Narayana EM School, Kurnool</div>
+                    <div class="edu-deg">Secondary Education · SSC · AP Board</div>
+                    <div class="edu-grade">99% · 598/600 · First Division</div>
+                    <button class="edu-cert-btn" onclick="window.open('Certificates/10TH_CERTIFICATE.jpg','_blank')">📄 View Certificate ↗</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- CERTS -->
+          <div class="fc-section" id="fc-certs">
+            <div class="fc-inner">
+              <h2 class="fc-title">Certificates</h2>
+              <p class="fc-sub" style="margin-bottom:20px;">Click any certificate to view it. 👇</p>
+              <div class="cert-grid">
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/Internship Certificate 1Stop.ai.pdf','Internship Certificate — 1Stop.AI')">
+                  <div class="cc-icon">💼</div>
+                  <div class="cc-body">
+                    <div class="cc-name">Internship Certificate</div>
+                    <div class="cc-src">1Stop.AI · July 2025</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/1stop Project Completion Certificate PET.pdf','Project Completion — Expense Tracker')">
+                  <div class="cc-icon">🏆</div>
+                  <div class="cc-body">
+                    <div class="cc-name">Project Completion — PET</div>
+                    <div class="cc-src">1Stop.AI · 2025</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/The Complete Python(Certificate) By Udemy.pdf','The Complete Python Developer')">
+                  <div class="cc-icon">🐍</div>
+                  <div class="cc-body">
+                    <div class="cc-name">The Complete Python Developer</div>
+                    <div class="cc-src">Udemy · March 2024</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/Gen AI By Udemy.pdf','Generative AI — Udemy')">
+                  <div class="cc-icon">🤖</div>
+                  <div class="cc-body">
+                    <div class="cc-name">Generative AI</div>
+                    <div class="cc-src">Udemy · 2025</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/Neo Colab DSA.pdf','DSA — Neo Colab')">
+                  <div class="cc-icon">🧠</div>
+                  <div class="cc-body">
+                    <div class="cc-name">Data Structures & Algorithms</div>
+                    <div class="cc-src">Neo Colab · May 2025</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/Java By Neo Colab.pdf','Java — Neo Colab')">
+                  <div class="cc-icon">☕</div>
+                  <div class="cc-body">
+                    <div class="cc-name">Java Programming</div>
+                    <div class="cc-src">Neo Colab · May 2025</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/Neo Colab C language.pdf','C Language — Neo Colab')">
+                  <div class="cc-icon">💻</div>
+                  <div class="cc-body">
+                    <div class="cc-name">C Language</div>
+                    <div class="cc-src">Neo Colab · 2025</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/Responsive Web Design (Freecodecamp).pdf','Responsive Web Design — freeCodeCamp')">
+                  <div class="cc-icon">🎨</div>
+                  <div class="cc-body">
+                    <div class="cc-name">Responsive Web Design</div>
+                    <div class="cc-src">freeCodeCamp · 2024</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/Fundamentals of Network Communication(Certificate).pdf','Network Communication')">
+                  <div class="cc-icon">🌐</div>
+                  <div class="cc-body">
+                    <div class="cc-name">Network Communication</div>
+                    <div class="cc-src">Fundamentals Course</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/Computer Communications.pdf','Computer Communications')">
+                  <div class="cc-icon">📡</div>
+                  <div class="cc-body">
+                    <div class="cc-name">Computer Communications</div>
+                    <div class="cc-src">2024</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/English Grammar Pro Certificate.pdf','English Grammar Pro')">
+                  <div class="cc-icon">📝</div>
+                  <div class="cc-body">
+                    <div class="cc-name">English Grammar Pro</div>
+                    <div class="cc-src">2024</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+                <div class="cert-card cert-clickable" onclick="viewCert('Certificates/Webka_Hackthon.pdf','WEBka Hackathon — Certificate of Participation')">
+                  <div class="cc-icon">⚡</div>
+                  <div class="cc-body">
+                    <div class="cc-name">WEBka Hackathon — Participation</div>
+                    <div class="cc-src">LPU · 22-23 March 2024</div>
+                  </div>
+                  <span class="cc-view">View ↗</span>
+                </div>
+
+              </div>
+
+              <h3 class="fc-subtitle">Achievements</h3>
+              <div class="ach-row"><span class="ach-n">200+</span><span>Problems solved on LeetCode</span></div>
+              <div class="ach-row"><span class="ach-n">200+</span><span>DSA problems on GeeksforGeeks</span></div>
+              <div class="ach-row"><span class="ach-n">12+</span><span>Certificates earned across platforms</span></div>
+              <div class="ach-row"><span class="ach-n">5+</span><span>Real-world projects built & deployed</span></div>
+            </div>
+          </div>
+
+
+
+          <!-- CONTACT -->
+          <div class="fc-section" id="fc-contact">
+            <div class="fc-inner">
+              <h2 class="fc-title">Get In Touch</h2>
+              <p class="fc-sub">Open to internships, freelance, and collaboration. Response time &lt; 24 hours.</p>
+              <div class="contact-list">
+                <a href="mailto:gollagopalyadav08@gmail.com" class="cl-item">
+                  <span class="cl-icon">✉️</span>
+                  <div><div class="cl-label">Email</div><div class="cl-val">gollagopalyadav08@gmail.com</div></div>
+                </a>
+                <a href="tel:+917075810619" class="cl-item">
+                  <span class="cl-icon">📞</span>
+                  <div><div class="cl-label">Phone</div><div class="cl-val">+91 7075810619</div></div>
+                </a>
+                <a href="https://github.com/BitByGopal" target="_blank" class="cl-item">
+                  <span class="cl-icon">💻</span>
+                  <div><div class="cl-label">GitHub</div><div class="cl-val">github.com/BitByGopal ↗</div></div>
+                </a>
+                <a href="https://linkedin.com/in/golla-gopal" target="_blank" class="cl-item">
+                  <span class="cl-icon">🔗</span>
+                  <div><div class="cl-label">LinkedIn</div><div class="cl-val">linkedin.com/in/golla-gopal ↗</div></div>
+                </a>
+                <a href="https://leetcode.com/u/BitByGopal/" target="_blank" class="cl-item">
+                  <span class="cl-icon">⚡</span>
+                  <div><div class="cl-label">LeetCode</div><div class="cl-val">leetcode.com/u/BitByGopal ↗</div></div>
+                </a>
+                <a href="https://www.geeksforgeeks.org/profile/bitbygopal" target="_blank" class="cl-item">
+                  <span class="cl-icon">🟢</span>
+                  <div><div class="cl-label">GFG</div><div class="cl-val">geeksforgeeks.org/bitbygopal ↗</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /finder-content -->
+      </div><!-- /finder-layout -->
+    </div><!-- /win-finder -->
+
+    <!-- ═══════════════════════════════════════════
+         CLASSIC PORTFOLIO WINDOW
+    ═══════════════════════════════════════════ -->
+    <div class="mac-window classic-fullscreen" id="win-classic" data-win="classic" style="display:none">
+      <div class="win-titlebar" data-drag="classic">
+        <div class="win-dots">
+          <button class="wd wd-red"    data-action="close"    data-win="classic"></button>
+          <button class="wd wd-yellow" data-action="minimize"  data-win="classic"></button>
+          <button class="wd wd-green"  data-action="maximize"  data-win="classic"></button>
+        </div>
+        <span class="win-title">Golla Gopal — Portfolio</span>
+        <div style="width:56px"></div>
+      </div>
+      <div class="classic-body">
+        <div class="cv-page">
+
+          <!-- ── HERO ── -->
+          <section class="cv-hero">
+            <div class="cv-hero-left">
+              <div class="cv-otw"><span class="cv-otw-dot"></span> Open to Work</div>
+              <h1 class="cv-name">Golla <em>Gopal</em></h1>
+              <p class="cv-tagline">Full Stack Developer · AI & ML Student</p>
+              <p class="cv-loc">📍 LPU, Punjab &nbsp;·&nbsp; From Kurnool, AP</p>
+              <div class="cv-hero-stats">
+                <div class="cv-stat"><span class="cv-sn">5+</span><span class="cv-sl">Projects</span></div>
+                <div class="cv-stat"><span class="cv-sn">200+</span><span class="cv-sl">LeetCode</span></div>
+                <div class="cv-stat"><span class="cv-sn">12+</span><span class="cv-sl">Certs</span></div>
+                <div class="cv-stat"><span class="cv-sn">400+</span><span class="cv-sl">DSA</span></div>
+              </div>
+              <div class="cv-hero-btns">
+                <a href="Gopal_CV.pdf" download class="cv-btn cv-btn-p">⬇ Download CV</a>
+                <a href="https://github.com/BitByGopal" target="_blank" class="cv-btn cv-btn-o">GitHub ↗</a>
+                <a href="https://linkedin.com/in/golla-gopal" target="_blank" class="cv-btn cv-btn-o">LinkedIn ↗</a>
+              </div>
+            </div>
+            <div class="cv-hero-right">
+              <img src="images/Profile.jpeg" class="cv-photo" alt="Golla Gopal"/>
+            </div>
+          </section>
+
+          <div class="cv-divider"></div>
+
+          <!-- ── ABOUT ── -->
+          <section class="cv-section">
+            <div class="cv-sec-label">About</div>
+            <div class="cv-about-grid">
+              <div class="cv-about-text">
+                <p>I'm a <strong>Full Stack Developer</strong> and <strong>AI & ML enthusiast</strong> in my 3rd year (Pre-Final Year) of BTech CSE at Lovely Professional University, Punjab. I build web applications that are fast, clean, and user-focused — from idea to deployment.</p>
+                <p>From food delivery platforms to ML-powered energy optimizers — I turn ideas into real working products. Previously interned at <strong>1Stop.AI</strong> as a Frontend Developer, building live UI components for a real EdTech platform used across India.</p>
+                <p>Outside of work I grind DSA — 400+ problems across LeetCode and GFG — because strong fundamentals are what separate good developers from great ones. Originally from <strong>Kurnool, AP</strong> — moved 2000km to Punjab to build something bigger.</p>
+              </div>
+              <div class="cv-skills-block">
+                <div class="cv-sk-group"><div class="cv-sk-label">Languages</div><div class="cv-sk-pills"><span>Python</span><span>Java</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div></div>
+                <div class="cv-sk-group"><div class="cv-sk-label">Frameworks</div><div class="cv-sk-pills"><span>Django</span><span>Flask</span><span>Bootstrap 5</span><span>jQuery</span><span>Pandas</span></div></div>
+                <div class="cv-sk-group"><div class="cv-sk-label">Tools</div><div class="cv-sk-pills"><span>Git</span><span>Docker</span><span>VS Code</span><span>Streamlit</span><span>Scikit-learn</span></div></div>
+                <div class="cv-sk-group"><div class="cv-sk-label">Core CS</div><div class="cv-sk-pills"><span>DSA</span><span>OOP</span><span>DBMS</span><span>OS</span><span>CN</span></div></div>
+              </div>
+            </div>
+          </section>
+
+          <div class="cv-divider"></div>
+
+          <!-- ── EXPERIENCE ── -->
+          <section class="cv-section">
+            <div class="cv-sec-label">Experience</div>
+            <div class="cv-exp-card">
+              <div class="cv-exp-top">
+                <div class="cv-exp-logo">1S</div>
+                <div class="cv-exp-meta">
+                  <div class="cv-exp-company">1Stop.AI</div>
+                  <div class="cv-exp-role">Frontend Developer Intern &nbsp;·&nbsp; July 2025</div>
+                  <div class="cv-exp-sub">EdTech & Training Solutions &nbsp;·&nbsp; Remote, India</div>
+                </div>
+                <span class="cv-exp-badge">✓ Certified</span>
+              </div>
+              <div class="cv-exp-points">
+                <div class="cv-ep">Designed and developed cross-device compatible UI components ensuring consistent experience across mobile, tablet, and desktop.</div>
+                <div class="cv-ep">Built dynamic features using jQuery and LocalStorage; debugged UI layout issues and optimized pages for performance and usability.</div>
+                <div class="cv-ep">Implemented responsive designs with HTML, CSS, JavaScript, and Bootstrap 5 — all deployed on a live production platform.</div>
+                <div class="cv-ep">Awarded a Web Development (Frontend) certificate upon successful completion of the internship program.</div>
+              </div>
+              <div class="cv-exp-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>jQuery</span><span>Bootstrap 5</span><span>LocalStorage</span></div>
+            </div>
+          </section>
+
+          <div class="cv-divider"></div>
+
+          <!-- ── PROJECTS ── -->
+          <section class="cv-section">
+            <div class="cv-sec-label">Projects</div>
+            <div class="cv-proj-list">
+              <div class="cv-proj">
+                <div class="cv-proj-head"><span class="cv-proj-name">YumYum</span><span class="cv-proj-tag">Web App · Django</span><div class="cv-proj-links"><a href="https://web-production-58c6.up.railway.app/" target="_blank" class="cv-pl cv-pl-live">🌐 Live</a><a href="https://github.com/BitByGopal" target="_blank" class="cv-pl">GitHub ↗</a></div></div>
+                <p class="cv-proj-desc">Full-stack food delivery platform — restaurant browsing, menus, cart, user auth, and order management. Django backend with responsive HTML/CSS/JS frontend. Fully functional across all devices.</p>
+                <div class="cv-proj-tech"><span>Django</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>SQLite</span></div>
+              </div>
+              <div class="cv-proj">
+                <div class="cv-proj-head"><span class="cv-proj-name">SmartShop</span><span class="cv-proj-tag">E-Commerce · JS</span><div class="cv-proj-links"><a href="https://github.com/BitByGopal" target="_blank" class="cv-pl">GitHub ↗</a></div></div>
+                <p class="cv-proj-desc">Responsive e-commerce website with product grid, real-time search, category filters, and dynamic cart. Bootstrap ensures consistent rendering on mobile, tablet, and desktop. Clean premium aesthetic.</p>
+                <div class="cv-proj-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span></div>
+              </div>
+              <div class="cv-proj">
+                <div class="cv-proj-head"><span class="cv-proj-name">Smart Home ML</span><span class="cv-proj-tag">Machine Learning</span><div class="cv-proj-links"><a href="https://github.com/BitByGopal" target="_blank" class="cv-pl">GitHub ↗</a></div></div>
+                <p class="cv-proj-desc">ML pipeline optimizing energy and water usage in home appliances. Covers data simulation, EDA, feature engineering, regression and decision tree models. Streamlit dashboard shows real-time predictions and conservation recommendations.</p>
+                <div class="cv-proj-tech"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Streamlit</span></div>
+              </div>
+              <div class="cv-proj">
+                <div class="cv-proj-head"><span class="cv-proj-name">Math Fun 4 Kids</span><span class="cv-proj-tag">EdTech · DSA</span><div class="cv-proj-links"><a href="https://github.com/BitByGopal" target="_blank" class="cv-pl">GitHub ↗</a></div></div>
+                <p class="cv-proj-desc">Interactive math learning app for early-grade children. Dynamic question generation using DSA — addition, subtraction, multiplication, sorting. Instant feedback, star ratings, high scores. Fully responsive on all devices.</p>
+                <div class="cv-proj-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>DSA</span></div>
+              </div>
+              <div class="cv-proj">
+                <div class="cv-proj-head"><span class="cv-proj-name">Expense Tracker</span><span class="cv-proj-tag">Finance · jQuery</span><div class="cv-proj-links"><a href="https://github.com/BitByGopal" target="_blank" class="cv-pl">GitHub ↗</a></div></div>
+                <p class="cv-proj-desc">Personal finance web app to log, filter, and analyze daily expenses. jQuery and Bootstrap 5 power a dynamic responsive UI. Category filters, date sorting, spending summaries — all data persists via LocalStorage. No backend needed.</p>
+                <div class="cv-proj-tech"><span>JavaScript</span><span>jQuery</span><span>Bootstrap 5</span><span>LocalStorage</span></div>
+              </div>
+            </div>
+            <a href="https://github.com/BitByGopal" target="_blank" class="cv-gh-link">View all projects on GitHub ↗</a>
+          </section>
+
+          <div class="cv-divider"></div>
+
+          <!-- ── EDUCATION ── -->
+          <section class="cv-section">
+            <div class="cv-sec-label">Education</div>
+            <div class="cv-edu-list">
+              <div class="cv-edu">
+                <div class="cv-edu-year">2023 – Present</div>
+                <div class="cv-edu-body">
+                  <div class="cv-edu-school">Lovely Professional University, Punjab</div>
+                  <div class="cv-edu-deg">BTech CSE — Artificial Intelligence & Machine Learning</div>
+                  <div class="cv-edu-row"><span class="cv-edu-grade">CGPA: 7.2</span><span class="cv-edu-status">In Progress</span></div>
+                </div>
+              </div>
+              <div class="cv-edu">
+                <div class="cv-edu-year">2022 – 2023</div>
+                <div class="cv-edu-body">
+                  <div class="cv-edu-school">Narayana Junior College, Hyderabad</div>
+                  <div class="cv-edu-deg">Higher Secondary · MPC Stream</div>
+                  <div class="cv-edu-row"><span class="cv-edu-grade">92.9% · A Grade</span><button class="cv-cert-btn" onclick="window.open('Certificates/12TH_CERTIFICATE.jpg','_blank')">📄 Certificate ↗</button></div>
+                </div>
+              </div>
+              <div class="cv-edu">
+                <div class="cv-edu-year">2020 – 2021</div>
+                <div class="cv-edu-body">
+                  <div class="cv-edu-school">Narayana EM School, Kurnool</div>
+                  <div class="cv-edu-deg">SSC · AP Board · First Division with Distinction</div>
+                  <div class="cv-edu-row"><span class="cv-edu-grade">99% · 598/600</span><button class="cv-cert-btn" onclick="window.open('Certificates/10TH_CERTIFICATE.jpg','_blank')">📄 Certificate ↗</button></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="cv-divider"></div>
+
+          <!-- ── ACHIEVEMENTS ── -->
+          <section class="cv-section">
+            <div class="cv-sec-label">Achievements & DSA</div>
+            <div class="cv-ach-grid">
+              <div class="cv-ach"><span class="cv-ach-n">200+</span><span class="cv-ach-l">LeetCode</span><a href="https://leetcode.com/u/BitByGopal/" target="_blank" class="cv-ach-link">⚡ BitByGopal</a></div>
+              <div class="cv-ach"><span class="cv-ach-n">200+</span><span class="cv-ach-l">GFG DSA</span><a href="https://www.geeksforgeeks.org/profile/bitbygopal" target="_blank" class="cv-ach-link">🟢 bitbygopal</a></div>
+              <div class="cv-ach"><span class="cv-ach-n">5+</span><span class="cv-ach-l">Projects Shipped</span><a href="https://github.com/BitByGopal" target="_blank" class="cv-ach-link">💻 GitHub</a></div>
+              <div class="cv-ach"><span class="cv-ach-n">12+</span><span class="cv-ach-l">Certificates</span><span class="cv-ach-link">Udemy · Neo Colab · fCC</span></div>
+            </div>
+            <div class="cv-extra-ach">
+              <div class="cv-ea">⚡ WEBka Hackathon — 24hr hackathon at LPU organized by Web3 Sabha × BlockSeBlock · March 2024</div>
+              <div class="cv-ea">💼 1Stop.AI Internship — Certified in Web Development (Frontend) · July 2025</div>
+            </div>
+          </section>
+
+          <div class="cv-divider"></div>
+
+          <!-- ── CONTACT ── -->
+          <section class="cv-section cv-contact-sec">
+            <div class="cv-sec-label">Contact</div>
+            <p class="cv-contact-intro">Open to internships, freelance, and collaborations. Response time &lt; 24 hours.</p>
+            <div class="cv-contact-row">
+              <a href="mailto:gollagopalyadav08@gmail.com" class="cv-contact-item">✉️ gollagopalyadav08@gmail.com</a>
+              <a href="tel:+917075810619" class="cv-contact-item">📞 +91 7075810619</a>
+              <a href="https://github.com/BitByGopal" target="_blank" class="cv-contact-item">💻 github.com/BitByGopal</a>
+              <a href="https://linkedin.com/in/golla-gopal" target="_blank" class="cv-contact-item">🔗 linkedin.com/in/golla-gopal</a>
+              <a href="https://leetcode.com/u/BitByGopal/" target="_blank" class="cv-contact-item">⚡ LeetCode/BitByGopal</a>
+              <a href="https://www.geeksforgeeks.org/profile/bitbygopal" target="_blank" class="cv-contact-item">🟢 GFG/bitbygopal</a>
+            </div>
+          </section>
+
+        </div><!-- /cv-page -->
+      </div><!-- /classic-body -->
+    </div><!-- /win-classic -->
+
+    <!-- ═══════════════════════════════════════════
+         GAMES WINDOW
+    ═══════════════════════════════════════════ -->
+    <div class="mac-window" id="win-games" data-win="games" style="display:none">
+      <div class="win-titlebar" data-drag="games">
+        <div class="win-dots">
+          <button class="wd wd-red"    data-action="close"   data-win="games"></button>
+          <button class="wd wd-yellow" data-action="minimize" data-win="games"></button>
+          <button class="wd wd-green"  data-action="maximize" data-win="games"></button>
+        </div>
+        <span class="win-title">Games.app — Play & Discover Gopal</span>
+        <div style="width:56px"></div>
+      </div>
+
+      <div class="games-body">
+        <!-- TABS -->
+        <div class="game-tabs">
+          <button class="game-tab active" data-game="snake">🐍 Snake — Skills</button>
+          <button class="game-tab" data-game="flappy">🐦 Flappy — Projects</button>
+          <button class="game-tab" data-game="g2048">🔢 2048 — Certificates</button>
+          <button class="game-tab" data-game="memory">🃏 Memory — Projects</button>
+        </div>
+
+        <!-- ── SNAKE ── -->
+        <div class="game-area active" id="game-snake">
+          <div class="game-split">
+            <div class="game-left">
+              <div class="game-info">
+                <div class="gi-item"><span class="gi-label">Score</span><span class="gi-val" id="snakeScore">0</span></div>
+                <div class="gi-item"><span class="gi-label">Level</span><span class="gi-val" id="snakeLevel">1</span></div>
+                <div class="gi-item"><span class="gi-label">Unlocked</span><span class="gi-val" id="snakeUnlocked">0/12</span></div>
+              </div>
+              <canvas id="snakeCanvas" width="360" height="360"></canvas>
+              <div class="game-controls">
+                <button class="gc-btn" id="snakeStart">▶ Start</button>
+                <span class="gc-hint">Arrow keys / WASD</span>
+              </div>
+            </div>
+            <div class="game-right">
+              <div class="gr-header">⚡ Skills Unlocked</div>
+              <div class="gr-cards" id="snakeCards">
+                <div class="gr-empty">Eat food to unlock skills one by one!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── FLAPPY BIRD ── -->
+        <div class="game-area" id="game-flappy">
+          <div class="game-split">
+            <div class="game-left">
+              <div class="game-info">
+                <div class="gi-item"><span class="gi-label">Score</span><span class="gi-val" id="flappyScore">0</span></div>
+                <div class="gi-item"><span class="gi-label">Best</span><span class="gi-val" id="flappyBest">0</span></div>
+                <div class="gi-item"><span class="gi-label">Unlocked</span><span class="gi-val" id="flappyUnlocked">0/6</span></div>
+              </div>
+              <canvas id="flappyCanvas" width="280" height="360"></canvas>
+              <div class="game-controls">
+                <button class="gc-btn" id="flappyStart">▶ Start</button>
+                <span class="gc-hint">Space / Click to flap</span>
+              </div>
+            </div>
+            <div class="game-right">
+              <div class="gr-header">📁 Projects & Experience</div>
+              <div class="gr-cards" id="flappyCards">
+                <div class="gr-empty">Pass pipes to reveal projects!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 2048 ── -->
+        <div class="game-area" id="game-g2048">
+          <div class="game-split">
+            <div class="game-left">
+              <div class="game-info">
+                <div class="gi-item"><span class="gi-label">Score</span><span class="gi-val" id="g2048Score">0</span></div>
+                <div class="gi-item"><span class="gi-label">Best</span><span class="gi-val" id="g2048Best">0</span></div>
+                <div class="gi-item"><span class="gi-label">Unlocked</span><span class="gi-val" id="g2048Unlocked">0/16</span></div>
+              </div>
+              <div class="g2048-board" id="g2048Board"></div>
+              <div class="game-controls">
+                <button class="gc-btn" id="g2048New">↺ New Game</button>
+                <span class="gc-hint">Arrow keys to slide</span>
+              </div>
+            </div>
+            <div class="game-right">
+              <div class="gr-header">🏆 Certificates & Achievements</div>
+              <div class="gr-cards" id="g2048Cards">
+                <div class="gr-empty">Merge tiles to unlock certificates!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MEMORY CARD FLIP ── -->
+        <div class="game-area" id="game-memory">
+          <div class="memory-layout">
+            <div class="memory-top">
+              <div class="game-info">
+                <div class="gi-item"><span class="gi-label">Moves</span><span class="gi-val" id="memMoves">0</span></div>
+                <div class="gi-item"><span class="gi-label">Matched</span><span class="gi-val" id="memMatched">0/6</span></div>
+                <div class="gi-item"><span class="gi-label">Time</span><span class="gi-val" id="memTime">0s</span></div>
+              </div>
+              <button class="gc-btn" id="memNew">↺ New Game</button>
+            </div>
+            <div class="memory-body">
+              <div class="memory-grid" id="memoryGrid"></div>
+              <div class="memory-detail" id="memoryDetail">
+                <div class="md-empty">Match cards to reveal project details!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /games-body -->
+    </div><!-- /win-games -->
+
+    <!-- ═══════════════════════════════════════════
+         BOOK A CALL WINDOW
+    ═══════════════════════════════════════════ -->
+    <div class="mac-window" id="win-bookcall" data-win="bookcall" style="display:none">
+      <div class="win-titlebar" data-drag="bookcall">
+        <div class="win-dots">
+          <button class="wd wd-red"    data-action="close"   data-win="bookcall"></button>
+          <button class="wd wd-yellow" data-action="minimize" data-win="bookcall"></button>
+          <button class="wd wd-green"  data-action="maximize" data-win="bookcall"></button>
+        </div>
+        <span class="win-title">📅 Book a Call — Golla Gopal</span>
+        <div style="width:56px"></div>
+      </div>
+      <div class="bookcall-body">
+        <div class="bc-left">
+          <div class="bc-profile">
+            <div class="bc-avatar">GG</div>
+            <div class="bc-name">Golla Gopal</div>
+            <div class="bc-role">Full Stack Developer · AI & ML</div>
+            <div class="bc-otw"><span class="bc-dot"></span> Open to Work</div>
+          </div>
+          <div class="bc-info-list">
+            <div class="bc-info-row">⏱️ <span>30 min call</span></div>
+            <div class="bc-info-row">📍 <span>Google Meet / Zoom</span></div>
+            <div class="bc-info-row">🌏 <span>IST (India, UTC+5:30)</span></div>
+            <div class="bc-info-row">📧 <span>gollagopalyadav08@gmail.com</span></div>
+          </div>
+          <div class="bc-topics">
+            <div class="bc-topics-label">Topics I'm open to:</div>
+            <div class="bc-topic-pills">
+              <span>Job Opportunities</span>
+              <span>Freelance Projects</span>
+              <span>Collaboration</span>
+              <span>Mentorship</span>
+              <span>Tech Discussion</span>
+            </div>
+          </div>
+        </div>
+        <div class="bc-right">
+          <h2 class="bc-form-title">Schedule a Call</h2>
+          <p class="bc-form-sub">Fill in your details and I'll confirm within 24 hours.</p>
+
+          <div class="bc-form" id="bcForm">
+            <div class="bc-field">
+              <label class="bc-label">Your Name *</label>
+              <input class="bc-input" id="bcName" type="text" placeholder="e.g. John Smith"/>
+            </div>
+            <div class="bc-field">
+              <label class="bc-label">Email Address *</label>
+              <input class="bc-input" id="bcEmail" type="email" placeholder="e.g. john@company.com"/>
+            </div>
+            <div class="bc-field">
+              <label class="bc-label">Preferred Date *</label>
+              <input class="bc-input" id="bcDate" type="date"/>
+            </div>
+            <div class="bc-field">
+              <label class="bc-label">Preferred Time *</label>
+              <input class="bc-input" id="bcTime" type="time"/>
+            </div>
+            <div class="bc-field">
+              <label class="bc-label">Reason for Call *</label>
+              <textarea class="bc-input bc-textarea" id="bcReason" placeholder="Briefly describe what you'd like to discuss..."></textarea>
+            </div>
+            <button class="bc-submit" id="bcSubmit">
+              <span id="bcBtnText">📅 Confirm Booking</span>
+            </button>
+            <div class="bc-note">By booking, you agree to receive a confirmation email.</div>
+          </div>
+
+          <!-- SUCCESS STATE -->
+          <div class="bc-success hidden" id="bcSuccess">
+            <div class="bc-success-icon">✅</div>
+            <h3>Booking Confirmed!</h3>
+            <p>A confirmation has been sent to your email and to Gopal.<br/>Expect a reply within 24 hours.</p>
+            <button class="bc-submit" id="bcNewBooking">📅 Book Another Call</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div><!-- /desktop -->
+
+  <!-- CERTIFICATE VIEWER MODAL — body level so it covers everything -->
+  <div class="cert-modal hidden" id="certModal">
+    <div class="cert-modal-bg" onclick="closeCert()"></div>
+    <div class="cert-modal-win">
+      <div class="cert-modal-bar">
+        <span class="cert-modal-title" id="certModalTitle">Certificate</span>
+        <div class="cert-modal-actions">
+          <a class="cert-modal-btn" id="certDownload" download>⬇ Download</a>
+          <button class="cert-modal-btn" onclick="closeCert()">✕ Close</button>
+        </div>
+      </div>
+      <div class="cert-modal-frame" id="certFrame">
+          <div class="cert-fallback" id="certFallback">
+            <div class="cf-icon">📄</div>
+            <div class="cf-title" id="cfTitle"></div>
+            <p class="cf-msg">Click below to view this certificate.</p>
+            <a class="cf-btn" id="cfOpen" href="#" target="_blank">🔍 Open Certificate</a>
+            <a class="cf-btn cf-dl" id="cfDl" href="#" download>⬇ Download PDF</a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <!-- ═══════════════════════════════════════════
+         ASSISTANT WINDOW
+    ═══════════════════════════════════════════ -->
+    <div class="mac-window" id="win-assistant" data-win="assistant" style="display:none; top:60px; left:50%; transform:translateX(-50%); width:min(700px,92vw); height:min(560px,calc(100vh - 100px));">
+      <div class="win-titlebar" data-drag="assistant">
+        <div class="win-dots">
+          <button class="wd wd-red"    data-action="close"   data-win="assistant"></button>
+          <button class="wd wd-yellow" data-action="minimize" data-win="assistant"></button>
+          <button class="wd wd-green"  data-action="maximize" data-win="assistant"></button>
+        </div>
+        <span class="win-title">✦ Gopal's AI Assistant</span>
+        <div style="width:56px"></div>
+      </div>
+      <div class="ai-body">
+        <!-- Header -->
+        <div class="ai-header">
+          <div class="ai-avatar">✦</div>
+          <div>
+            <div class="ai-name">Gopal's Assistant</div>
+            <div class="ai-status"><span class="ai-dot"></span> Online — Ask me anything about Gopal!</div>
+          </div>
+        </div>
+
+        <!-- Chat messages -->
+        <div class="ai-messages" id="aiMessages">
+          <div class="ai-msg bot">
+            <div class="ai-bubble">
+              👋 Hi! I'm Gopal's AI Assistant. I know everything about him — his skills, projects, experience, education, and more.<br/><br/>
+              What would you like to know?
+            </div>
+          </div>
+          <div class="ai-suggestions" id="aiSuggestions">
+            <button class="ai-chip" data-q="Tell me about Gopal">👤 About Gopal</button>
+            <button class="ai-chip" data-q="Show all projects">🚀 All Projects</button>
+            <button class="ai-chip" data-q="Tell me about YumYum">🍔 YumYum</button>
+            <button class="ai-chip" data-q="What are his skills?">⚡ Skills</button>
+            <button class="ai-chip" data-q="How to contact him?">📬 Contact & Links</button>
+            <button class="ai-chip" data-q="What is his LeetCode and GFG profile?">🧩 DSA Profiles</button>
+            <button class="ai-chip" data-q="What is his work experience?">💼 Experience</button>
+            <button class="ai-chip" data-q="Is he available for work?">🟢 Availability</button>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div class="ai-inputrow">
+          <input class="ai-input" id="aiInput" type="text" placeholder="Ask anything about Gopal..." autocomplete="off"/>
+          <button class="ai-send" id="aiSend">↑</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /desktop -->
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
