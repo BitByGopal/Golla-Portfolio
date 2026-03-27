@@ -1787,3 +1787,109 @@ document.addEventListener('keydown', e => {
   const win = document.getElementById('win-classic');
   if (win) obs.observe(win, { attributes: true, attributeFilter: ['style'] });
 })();
+
+/* ══════════════════════════════════════════════
+   WELCOME ONBOARDING POPUP
+   Shows once per visitor (localStorage)
+══════════════════════════════════════════════ */
+(function initWelcome() {
+  // Only show once
+  if (localStorage.getItem('gp_visited')) return;
+ 
+  const STEPS = [
+    {
+      icon: '👋',
+      title: 'Welcome to Gopal\'s Portfolio!',
+      msg: 'This is a fully interactive <span class="wp-highlight">macOS-style portfolio</span>. Here\'s a quick guide to explore it the best way!'
+    },
+    {
+      icon: '🖥️',
+      title: 'Classic.app — Quick View',
+      msg: 'Click <span class="wp-highlight">Classic.app</span> in the dock for a clean, scrollable portfolio — perfect for a quick overview of projects, skills & experience.'
+    },
+    {
+      icon: '⌨️',
+      title: 'Terminal.app — Dev Mode',
+      msg: 'Open <span class="wp-highlight">Terminal.app</span> and type <span class="wp-highlight">help</span> to see all commands. Try <span class="wp-highlight">projects</span>, <span class="wp-highlight">skills</span>, <span class="wp-highlight">internship</span> and more!'
+    },
+    {
+      icon: '🖱️',
+      title: 'Right-Click Anywhere',
+      msg: '<span class="wp-highlight">Right-click</span> on the desktop for quick options — About, Projects, Download CV, GitHub, LinkedIn and more!'
+    },
+    {
+      icon: '🎮',
+      title: 'Games.app — Play & Discover',
+      msg: 'Open <span class="wp-highlight">Games.app</span> and play Snake, Flappy Bird, 2048 or Memory Cards — each game reveals hidden skills, projects & certificates!'
+    },
+    {
+      icon: '✦',
+      title: 'AI Assistant — Ask Anything',
+      msg: 'Click <span class="wp-highlight">Assistant.app</span> to chat with Gopal\'s AI assistant. Ask about projects, skills, contact info, availability — anything!'
+    },
+  ];
+ 
+  let current = 0;
+  const total = STEPS.length;
+ 
+  const overlay  = document.getElementById('welcomeOverlay');
+  const icon     = document.getElementById('wpIcon');
+  const title    = document.getElementById('wpTitle');
+  const msg      = document.getElementById('wpMsg');
+  const dots     = document.getElementById('wpDots');
+  const nextBtn  = document.getElementById('wpNext');
+  const skipBtn  = document.getElementById('wpSkip');
+  const progBar  = document.getElementById('wpProgBar');
+ 
+  // Build dots
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('div');
+    d.className = 'wp-dot' + (i === 0 ? ' active' : '');
+    dots.appendChild(d);
+  }
+ 
+  function render(idx) {
+    const s = STEPS[idx];
+    icon.textContent  = s.icon;
+    title.textContent = s.title;
+    msg.innerHTML     = s.msg;
+    progBar.style.width = ((idx + 1) / total * 100) + '%';
+    // Update dots
+    dots.querySelectorAll('.wp-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+    // Last step — change button text
+    nextBtn.textContent = idx === total - 1 ? 'Let\'s Go! 🚀' : 'Next →';
+  }
+ 
+  function dismiss() {
+    overlay.classList.add('hidden');
+    localStorage.setItem('gp_visited', '1');
+  }
+ 
+  nextBtn.addEventListener('click', () => {
+    if (current < total - 1) {
+      current++;
+      render(current);
+    } else {
+      dismiss();
+    }
+  });
+ 
+  skipBtn.addEventListener('click', dismiss);
+ 
+  // Show popup 2s after desktop appears
+  const desktopObs = new MutationObserver(() => {
+    const d = document.getElementById('desktop');
+    if (d && d.classList.contains('visible')) {
+      setTimeout(() => {
+        overlay.classList.remove('hidden');
+        render(0);
+      }, 1500);
+      desktopObs.disconnect();
+    }
+  });
+  desktopObs.observe(document.getElementById('desktop'), {
+    attributes: true, attributeFilter: ['class']
+  });
+})();
